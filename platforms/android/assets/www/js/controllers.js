@@ -18,6 +18,7 @@ angular.module('starter.controllers', [])
   $scope.add = function(){
     Pasties.add(this.text, this.imageURI);
     this.text = "";
+    this.imageURI = "";
     this.message = "Your pastie was published!";
     setTimeout(this.clearMessage.bind(this), 2000);
   };
