@@ -3,10 +3,22 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, Pasties) {
   $scope.message = null;
   $scope.text = "";
+  $scope.imageURI = null;
+
+  $scope.snap = function(){
+    navigator.camera.getPicture( function(fileURI){
+      this.imageURI = fileURI;
+      this.$apply();
+
+    }.bind(this), function(){
+      alert(arguments[0]);
+    } );
+  };
 
   $scope.add = function(){
-    Pasties.add(this.text, null);
+    Pasties.add(this.text, this.imageURI);
     this.text = "";
+    this.imageURI = "";
     this.message = "Your pastie was published!";
     setTimeout(this.clearMessage.bind(this), 2000);
   };

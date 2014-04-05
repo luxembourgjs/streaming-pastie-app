@@ -1,13 +1,23 @@
 <ion-view title="Streaming Pastie">
 <ion-content class="has-header padding">
-<div class="card message" ng-show="message"><p>{{message}}</p></div>
-<form>
-  <label class="item item-input">
-    <textarea ng-model="text" name="text" placeholder="Enter your pastie"></textarea>
-  </label>
-  <button class="button button-block button-positive" ng-click="add()">
-    Publish!
-  </button>
-</form>
+
+  <div class="card message" ng-show="message"><p>{{message}}</p></div>
+
+  <form>
+    <label class="item item-input">
+      <textarea ng-model="text" name="text" placeholder="Enter your pastie"></textarea>
+    </label>
+
+    <div class="image-preview" ng-show="imageURI">
+      <img src="{{imageURI}}">
+    </div>
+
+    <button class="button button-block button-dark" ng-click="snap()">Open camera</button>
+    <button class="button button-block button-positive" ng-click="add()">
+      Publish!
+    </button>
+  </form>
+
+
 </ion-content>
 </ion-view>

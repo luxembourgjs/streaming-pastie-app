@@ -4,3 +4,5 @@ textarea {height:60px;}
 .muted {color:#888;}
 .item p {color:black;}
 .card.message {color:green;}
+.image-preview img {width:120px;}
+.image-preview {margin-top:5px;}

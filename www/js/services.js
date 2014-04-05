@@ -18,10 +18,28 @@ angular.module('starter.services', [])
     get: function(pastieId) {
       return pasties.filter(function(pastie){return pastie.id == pastieId;})[0];
     },
-    add: function(text, url) {
-      $.post("http://streaming-pastie.herokuapp.com/pasties.json", {"pastie[text]":text, "pastie[image_url]":url}, function(data){
+    add: function(text, fileURI) {
+      $.post("http://streaming-pastie.herokuapp.com/pasties.json", {"pastie[text]":text}, function(data){
         pasties.unshift(data);
+
+        if (fileURI){
+
+          var options = new FileUploadOptions();
+          options.fileKey = "file";
+          options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
+          options.mimeType = "image/png";
+          options.params = {_method: "patch"};
+
+          var ft = new FileTransfer();
+          ft.upload(fileURI, encodeURI("http://streaming-pastie.herokuapp.com/pasties/" + data.id + ".json"),
+            function(){
+              console.log("Success! " + arguments[0]);
+            }, function(){
+              console.log("Failure! " + arguments[0])
+            }, options);
+        }
       })
+
     }
   }
 });
