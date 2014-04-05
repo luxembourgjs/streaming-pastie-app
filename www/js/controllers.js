@@ -18,12 +18,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PastiesCtrl', function($scope, Pasties) {
+  Pasties.refresh();
   $scope.pasties = Pasties.all();
-})
 
-.controller('PastieDetailCtrl', function($scope, $stateParams, Pasties) {
-  $scope.pastie = Pasties.get($stateParams.pastieId);
+  $scope.refreshPasties = function(){
+    Pasties.refresh();
+    this.pasties = Pasties.all();
+    this.$apply();
+  };
+  setInterval($scope.refreshPasties.bind($scope), 5000);
 })
-
-.controller('AccountCtrl', function($scope) {
-});
