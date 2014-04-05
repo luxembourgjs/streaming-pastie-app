@@ -1,0 +1,10 @@
+<ion-view title="Pasties">
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item class="pastie" ng-repeat="pastie in pasties" type="item-text-wrap" href="#/tab/pastie/{{pastie.id}}">
+      <p>{{pastie.text}} <span class="muted">{{pastie.created_at}}</span></p>
+        <img src="{{pastie.image_url}}">
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

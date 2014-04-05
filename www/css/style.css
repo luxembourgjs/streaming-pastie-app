@@ -1,0 +1,6 @@
+/* Empty. Add your own CSS if you like */
+textarea {height:60px;}
+.pastie img {max-width:60px; max-height:60px;}
+.muted {color:#888;}
+.item p {color:black;}
+.card.message {color:green;}
