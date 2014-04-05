@@ -32,9 +32,11 @@
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www/statusbar.js \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/img/ionic.png \
+/home/matt/code/StreamingPastieApp/platforms/android/assets/www/js/vendor \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/js/services.js \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/js/app.js \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/js/controllers.js \
+/home/matt/code/StreamingPastieApp/platforms/android/assets/www/js/vendor/jquery-2.1.0.js \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic/scss \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic/css \
@@ -99,9 +101,7 @@
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic/fonts/ionicons.svg \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic/fonts/ionicons.woff \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/lib/ionic/fonts/ionicons.ttf \
+/home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/tab-pasties.html \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/tab-dash.html \
-/home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/tab-account.html \
-/home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/tab-friends.html \
-/home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/friend-detail.html \
 /home/matt/code/StreamingPastieApp/platforms/android/assets/www/templates/tabs.html \
 /home/matt/code/StreamingPastieApp/platforms/android/ant-build/AndroidManifest.xml \

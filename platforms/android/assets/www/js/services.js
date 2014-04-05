@@ -3,24 +3,25 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
-  ];
+.factory('Pasties', function() {
+  var pasties = [];
 
   return {
-    all: function() {
-      return friends;
+    refresh: function(){
+      $.getJSON("http://streaming-pastie.herokuapp.com/pasties.json", null, function(data){
+        pasties = data;
+      })
     },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
+    all: function() {
+      return pasties;
+    },
+    get: function(pastieId) {
+      return pasties.filter(function(pastie){return pastie.id == pastieId;})[0];
+    },
+    add: function(text, url) {
+      $.post("http://streaming-pastie.herokuapp.com/pasties.json", {"pastie[text]":text, "pastie[image_url]":url}, function(data){
+        pasties.unshift(data);
+      })
     }
   }
 });

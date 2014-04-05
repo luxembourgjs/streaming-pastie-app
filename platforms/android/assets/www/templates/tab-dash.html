@@ -1,5 +1,13 @@
-<ion-view title="Dashboard">
-  <ion-content class="has-header padding">
-    <h1>Dash</h1>
-  </ion-content>
+<ion-view title="Streaming Pastie">
+<ion-content class="has-header padding">
+<div class="card message" ng-show="message"><p>{{message}}</p></div>
+<form>
+  <label class="item item-input">
+    <textarea ng-model="text" name="text" placeholder="Enter your pastie"></textarea>
+  </label>
+  <button class="button button-block button-positive" ng-click="add()">
+    Publish!
+  </button>
+</form>
+</ion-content>
 </ion-view>

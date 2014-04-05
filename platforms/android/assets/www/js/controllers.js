@@ -1,15 +1,30 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, Pasties) {
+  $scope.message = null;
+  $scope.text = "";
+
+  $scope.add = function(){
+    Pasties.add(this.text, null);
+    this.text = "";
+    this.message = "Your pastie was published!";
+    setTimeout(this.clearMessage.bind(this), 2000);
+  };
+
+  $scope.clearMessage = function(){
+    this.message = null;
+    this.$apply();
+  }
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
+.controller('PastiesCtrl', function($scope, Pasties) {
+  Pasties.refresh();
+  $scope.pasties = Pasties.all();
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+  $scope.refreshPasties = function(){
+    Pasties.refresh();
+    this.pasties = Pasties.all();
+    this.$apply();
+  };
+  setInterval($scope.refreshPasties.bind($scope), 5000);
 })
-
-.controller('AccountCtrl', function($scope) {
-});
