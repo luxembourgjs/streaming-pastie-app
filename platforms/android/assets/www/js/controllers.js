@@ -38,5 +38,5 @@ angular.module('starter.controllers', [])
     this.pasties = Pasties.all();
     this.$apply();
   };
-  setInterval($scope.refreshPasties.bind($scope), 5000);
+  setInterval($scope.refreshPasties.bind($scope), 4000);
 })
