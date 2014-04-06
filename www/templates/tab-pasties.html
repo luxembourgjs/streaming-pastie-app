@@ -2,8 +2,7 @@
   <ion-content class="has-header">
     <ion-list>
       <ion-item class="pastie" ng-repeat="pastie in pasties" type="item-text-wrap">
-      <p>{{pastie.text}} <span class="muted">{{pastie.created_at}}</span></p>
-        <img src="{{pastie.image_url}}">
+        <p><img ng-src="{{pastie.image_url}}">{{pastie.text}} <span class="muted">{{pastie.created_at}}</span></p>
       </ion-item>
     </ion-list>
   </ion-content>
